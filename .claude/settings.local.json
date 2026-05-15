@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\timho\\\\Documents\\\\BKW-App\" -Force)",
+      "Bash(Select-Object Name, Mode)"
+    ]
+  }
+}

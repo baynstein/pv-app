@@ -1,0 +1,18 @@
+<div class="strip">
+  @for (day of days(); track day.date; let i = $index) {
+    <button
+      class="day-card"
+      [class.active]="i === selectedIndex()"
+      (click)="select(i)"
+      type="button"
+    >
+      <span class="day-label">{{ day.label }}</span>
+      <span class="date-label">{{ day.dateLabel }}</span>
+      <div class="mini-bar">
+        <div class="mini-fill" [style.height.%]="fillRatio(day) * 100"></div>
+      </div>
+      <span class="kwh">{{ day.totalKwh.toFixed(1) }}<span class="unit"> kWh</span></span>
+      <span class="cloud">{{ day.cloudPct.toFixed(0) }}%</span>
+    </button>
+  }
+</div>

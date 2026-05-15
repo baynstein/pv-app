@@ -1,0 +1,160 @@
+:host {
+  display: block;
+  padding: 12px 12px 20px;
+}
+
+.detail-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 20px 16px 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Gauges ── */
+
+.gauges-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 110px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.gauge-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.gauge {
+  width: 100%;
+  max-width: 110px;
+  overflow: visible;
+}
+
+.gauge-track {
+  fill: none;
+  stroke: rgba(0, 0, 0, 0.08);
+  stroke-width: 9;
+  stroke-linecap: round;
+}
+
+.gauge-fill {
+  fill: none;
+  stroke-width: 9;
+  stroke-linecap: round;
+  /* stroke-dasharray is set via [style] binding for CSS transition to work */
+  stroke-dasharray: 0 263.89;
+  transition: stroke-dasharray 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.orange { stroke: #f97316; }
+  &.blue   { stroke: #3b82f6; }
+}
+
+.gauge-val {
+  font-size: 20px;
+  font-weight: 700;
+  fill: #1a2e3e;
+  text-anchor: middle;
+  font-family: inherit;
+}
+
+.gauge-unit {
+  font-size: 10px;
+  fill: #6b7280;
+  text-anchor: middle;
+  font-family: inherit;
+}
+
+.gauge-label {
+  font-size: 11px;
+  color: #6b7280;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ── Quality center ── */
+
+.quality-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.quality-badge {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a2e3e;
+}
+
+.quality-desc {
+  font-size: 11px;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.sun-times {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.sun-time {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #374151;
+  font-weight: 500;
+}
+
+/* ── Chart ── */
+
+.chart-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chart-legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #6b7280;
+  padding-left: 4px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  flex-shrink: 0;
+
+  &.orange { background: #f97316; }
+  &.gray   { background: rgba(156, 163, 175, 0.55); }
+  &.yellow { background: #fbbf24; }
+  &.sky    { background: rgba(147, 197, 253, 0.85); }
+}
+
+.chart-section--rad {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.chart-wrap {
+  position: relative;
+  height: 200px;
+
+  canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}

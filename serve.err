@@ -1,0 +1,60 @@
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'trackPath' does not exist on type 'DayDetail'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/day-detail/day-detail.html:8:24:
+[37m      8 │         <path [attr.d]="[32mtrackPath[37m" class="gauge-track" />
+        ╵                         [32m~~~~~~~~~[0m
+
+  Error occurs in the template of component DayDetail.
+
+    src/app/components/day-detail/day-detail.ts:28:15:
+[37m      28 │   templateUrl: [32m'./day-detail.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'kwhFillPath' does not exist on type 'DayDetail'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/day-detail/day-detail.html:9:24:
+[37m      9 │         <path [attr.d]="[32mkwhFillPath[37m()" class="gauge-fill orange" />
+        ╵                         [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component DayDetail.
+
+    src/app/components/day-detail/day-detail.ts:28:15:
+[37m      28 │   templateUrl: [32m'./day-detail.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'trackPath' does not exist on type 'DayDetail'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/day-detail/day-detail.html:45:24:
+[37m      45 │         <path [attr.d]="[32mtrackPath[37m" class="gauge-track" />
+         ╵                         [32m~~~~~~~~~[0m
+
+  Error occurs in the template of component DayDetail.
+
+    src/app/components/day-detail/day-detail.ts:28:15:
+[37m      28 │   templateUrl: [32m'./day-detail.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'cloudFillPath' does not exist on type 'DayDetail'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/day-detail/day-detail.html:46:24:
+[37m      46 │         <path [attr.d]="[32mcloudFillPath[37m()" class="gauge-fill blue" />
+         ╵                         [32m~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component DayDetail.
+
+    src/app/components/day-detail/day-detail.ts:28:15:
+[37m      28 │   templateUrl: [32m'./day-detail.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '{ hour: number; forecastW: number; potentialW: number; cloudPct: number; }' is not assignable to parameter of type 'HourlyPoint'.
+  Type '{ hour: number; forecastW: number; potentialW: number; cloudPct: number; }' is missing the following properties from type 'HourlyPoint': directW, diffuseW[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/solar-forecast.service.ts:109:19:
+[37m      109 │ ... hours.push([32m{ hour: h, forecastW, potentialW, cloudPct: cloud }[37m);
+          ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m

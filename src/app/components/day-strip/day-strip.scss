@@ -1,0 +1,85 @@
+:host {
+  display: block;
+  padding: 10px 12px 0;
+}
+
+.strip {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.day-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 4px;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+  font-family: inherit;
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  &.active {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: #f97316;
+    box-shadow: 0 2px 12px rgba(249, 115, 22, 0.2);
+  }
+}
+
+.day-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #374151;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.date-label {
+  font-size: 10px;
+  color: #6b7280;
+}
+
+.mini-bar {
+  width: 5px;
+  height: 28px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  margin: 2px 0;
+}
+
+.mini-fill {
+  width: 100%;
+  background: #f97316;
+  border-radius: 3px;
+  min-height: 2px;
+  transition: height 0.4s ease;
+}
+
+.kwh {
+  font-size: 10px;
+  font-weight: 600;
+  color: #1a2e3e;
+  white-space: nowrap;
+
+  .unit {
+    font-weight: 400;
+    color: #6b7280;
+  }
+}
+
+.cloud {
+  font-size: 10px;
+  color: #3b82f6;
+}

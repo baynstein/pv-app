@@ -1,0 +1,78 @@
+<div class="detail-card">
+
+  <!-- Gauges row -->
+  <div class="gauges-row">
+
+    <div class="gauge-wrap">
+      <svg viewBox="0 0 100 100" class="gauge" aria-hidden="true">
+        <!-- rotate(135) shifts stroke start from 3-o'clock to 7:30 so the 90° gap falls at bottom -->
+        <circle cx="50" cy="50" r="42" class="gauge-track" [attr.stroke-dasharray]="trackDashArray" transform="rotate(135, 50, 50)" />
+        <circle cx="50" cy="50" r="42" class="gauge-fill orange" [style.stroke-dasharray]="kwhDashArray()" transform="rotate(135, 50, 50)" />
+        <text x="50" y="44" class="gauge-val">{{ day().totalKwh.toFixed(1) }}</text>
+        <text x="50" y="58" class="gauge-unit">kWh</text>
+      </svg>
+      <span class="gauge-label">Ertrag</span>
+    </div>
+
+    <div class="quality-center">
+      <span class="quality-badge">{{ qualityLabel() }}</span>
+      <span class="quality-desc">{{ qualityDesc() }}</span>
+      <div class="sun-times">
+        <span class="sun-time">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2">
+            <circle cx="12" cy="12" r="4"/>
+            <line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          {{ formatTime(day().sunrise) }}
+        </span>
+        <span class="sun-time">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2">
+            <circle cx="12" cy="12" r="4"/>
+            <line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          {{ formatTime(day().sunset) }}
+        </span>
+      </div>
+    </div>
+
+    <div class="gauge-wrap">
+      <svg viewBox="0 0 100 100" class="gauge" aria-hidden="true">
+        <circle cx="50" cy="50" r="42" class="gauge-track" [attr.stroke-dasharray]="trackDashArray" transform="rotate(135, 50, 50)" />
+        <circle cx="50" cy="50" r="42" class="gauge-fill blue" [style.stroke-dasharray]="cloudDashArray()" transform="rotate(135, 50, 50)" />
+        <text x="50" y="44" class="gauge-val">{{ day().cloudPct.toFixed(0) }}%</text>
+        <text x="50" y="58" class="gauge-unit">Wolken</text>
+      </svg>
+      <span class="gauge-label">Bewölkung</span>
+    </div>
+
+  </div>
+
+  <!-- Power chart -->
+  <div class="chart-section">
+    <div class="chart-legend">
+      <span class="legend-dot orange"></span><span>Prognose</span>
+      <span class="legend-dot gray"></span><span>Potenzial</span>
+    </div>
+    <div class="chart-wrap">
+      <canvas #chartCanvas></canvas>
+    </div>
+  </div>
+
+  <!-- Radiation chart -->
+  <div class="chart-section chart-section--rad">
+    <div class="chart-legend">
+      <span class="legend-dot yellow"></span><span>Direkt (GHI − DHI)</span>
+      <span class="legend-dot sky"></span><span>Diffus (DHI)</span>
+    </div>
+    <div class="chart-wrap">
+      <canvas #radCanvas></canvas>
+    </div>
+  </div>
+
+</div>
